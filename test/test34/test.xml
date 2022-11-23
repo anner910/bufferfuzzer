@@ -1,0 +1,74 @@
+
+
+
+<BufferFuzzer name="http_buffer" author="wanghao 6482543@qq_com">
+
+<Buffer name="Enter" >
+    <Buf valueType="hex" value="0d0a" token="true"/>
+</Buffer>
+
+<Buffer name="http_head" >
+    <String name="method" />
+    <String name=" " token="true"/>
+    <String name="uri" />
+    <String name=" " token="true"/>
+    <String name="version" />
+    <Struct name="DEnter" ref="Enter"/>
+</Buffer>
+
+<Buffer name="http_content_length" >
+    <String value="Content-Length" token="true"/>
+    <String value=": " token="true"/>
+    <String name="length" >
+        <Relation type="sizeString" of="data"/>
+    </String>
+    <Struct name="DEnter" ref="Enter"/>
+</Buffer>
+
+<Buffer name="http_host" >
+    <String value="Host" token="true"/>
+    <String value=": " token="true"/>
+    <String name="host_value" />
+    <Struct name="DEnter" ref="Enter"/>
+</Buffer>
+
+<!-- http RFC2616 -->
+<!-- 字段名称来自wireshark -->
+
+<Buffer name="http_packet" >
+    <Struct name="HttpHead" ref="http_head"/>
+    <Array name="Options" Occurs="-1">
+        <Union>
+            <Struct name="HttpContentLength" ref="http_content_length"/>
+            <Struct name="HttpHost" ref="http_host"/>
+            <Struct name="Option" >
+                <String name="type" check="checkHttp"/>
+                <String value=": " token="true"/>
+                <String name="value"/>
+                <Struct ref="Enter"/>
+            </Struct >
+        </Union>
+    </Array>
+    <Struct ref="Enter"/>
+    <Buf name="data" />
+</Buffer>
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

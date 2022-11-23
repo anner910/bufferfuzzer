@@ -1,0 +1,44 @@
+
+
+
+<BufferFuzzer name="test_buffer" author="wanghao 6482543@qq_com">
+
+<Configure>
+    <String name="dstport" value="1000"/>
+    <String name="srcmac" value="01005e000001"/>
+    <String name="ipadd" value="192.168.0.3"/>
+
+    <String name="name" value="wanghao"/>
+</Configure>
+
+
+<Buffer name="test" >
+
+    <U32 name="port" value="##dstport##" />
+    <Buf name="mac" valueType="hex" value="##srcmac##" />
+    <String name="ip" valueType="ipv4" value="##ipadd##"/>	
+
+    <String name="usernamePara"  value="username=##name##"/>	
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

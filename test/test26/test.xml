@@ -1,0 +1,61 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="type2" size="32" value="2"/>
+    <Number name="length2" size="32">
+        <Relation type="size" of="Block1"/>
+    </Number>
+
+    <Struct name="Block1" >
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String4" length="3" value="ddd"/>
+        <Buf name="Blob4" value="ggg"/>
+    </Struct>
+
+    <Buf name="Blob5" value="!"/>
+
+</Buffer>
+
+
+
+<Buffer name="DataMode22" >
+
+    <Number name="type2" size="32" value="2"/>
+    <Number name="length2" size="32">
+        <Relation type="size" of="Block1"/>
+    </Number>
+
+    <Struct name="Block1" >
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String4" length="3" value="ddd"/>
+        <Buf name="Blob4" value="ggg"/>
+    </Struct>
+
+    <Buf name="Blob5" value="!"/>
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

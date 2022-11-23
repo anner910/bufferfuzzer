@@ -1,0 +1,50 @@
+
+
+
+
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+	<U32 name="type" value="10"/>
+	
+	<U32 name="length" >
+		<Relation type="size" of="value"/>
+	</U32>
+	
+	<Struct name="value" >
+		<U32 name="type1" value="10"/>
+	
+		<U32 name="length1" >
+			<Relation type="size" of="data"/>
+		</U32>
+		
+		<Buf name="data" length="100" value="ccc"/>
+	</Struct>
+
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

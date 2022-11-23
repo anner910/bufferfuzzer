@@ -1,0 +1,35 @@
+<BufferFuzzer name="test_buffer" author="wanghao 6482543@qq_com">
+
+
+<Buffer name="test" >
+
+    <Buf name="mac" valueType="hex" value="01005e000001" />
+    <U32 name="port" value="1000" mutator="false"/>
+
+    <Struct mutator="false">
+        <Buf name="mac1" valueType="hex" value="01005e000001" />
+        <U32 name="port1" value="1000" mutator="true"/>	
+    </Struct>
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

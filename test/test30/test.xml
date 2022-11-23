@@ -1,0 +1,34 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <String name="String1" />
+    <String name="String2" value="bbbbbb" token="true"/>
+    <String name="String3"  check="checkHttp"/>
+    <String name="String4" value="cccccc" token="true"/>
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

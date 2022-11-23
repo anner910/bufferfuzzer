@@ -1,0 +1,40 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="type1" size="32" value="1"/>
+
+
+    <Number name="Number1" length="4">
+        <Fixup type="crc32" >
+            <Param name="ref" value="blob1"/>
+        </Fixup>
+    </Number>
+
+    <Buf name="blob1" value="Hello world!" />
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

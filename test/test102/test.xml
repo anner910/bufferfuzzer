@@ -1,0 +1,50 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<DataModel name="DataModel1" >
+
+    <Number name="type2" size="32" value="2"/>
+
+    <Choice name="Block1" >
+        <Block>
+            <String name="String4" length="3" value="ccc" token="true"/>
+            <String name="String44" length="3" value="ddd" token="true"/>
+        </Block>
+
+        <Block>
+            <String name="String6" length="3" value="ccc" token="true"/>
+            <String name="String66" length="3" value="DDD" token="true"/>
+            <String name="String66" length="3" value="ddd" token="true"/>
+        </Block>
+
+
+        <String name="String5" length="3" value="ccc" token="true"/>
+        <String name="String6" length="3" value="eee" token="true"/>
+    </Choice>
+
+    <Blob name="Blob5" value="!"/>
+
+</DataModel>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+
+
+
+
+<BufferFuzzer name="BufferFuzzer1" >
+
+<Defaults>
+	<Number endian="big" />
+</Defaults>
+
+
+<DataModel name="DataModel1" >
+    <Block name="Block1" >
+		
+        <String name="String1" />
+		
+		<String name="String2" length="4" value="bbbb" token="true"/>
+		
+		<String name="String3" />
+		
+		<String name="String4" length="3" value="666" token="true"/>
+		
+		<Blob />
+
+    </Block>
+</DataModel>
+
+<DataModel name="DataMode22" >
+    <Block name="Block1" >
+		
+		<Number name="Number1" size="32" />
+
+		<Blob name="blob1" value="Hello world!" />
+		
+		<Blob name="blob2" value="Hello world!" />
+		
+        <String name="String1" length="3" value="bbb" token="true"/>
+		
+		<Blob name="blob3" value="!" />
+
+    </Block>
+</DataModel>
+
+
+<DataModel name="DataModel144444444444444444444444444444444444444" >
+
+	<Blob />
+
+    <Block name="Block1" >
+		
+		<Number name="Number1" size="32">
+			<Relation type="size" of="blob1"/>
+		</Number>
+	
+		<Blob name="blob1" value="Hello world!" />
+		
+		<Blob name="blob2" value="Hello world!" />
+		
+        <String name="String1" length="3" value="bbb" token="true"/>
+		
+		<Block name="Block2" >
+		
+			<Number name="type" size="32"/>
+			<Number name="length" size="32">
+				<Relation type="size" of="Block2"/>
+			</Number>
+			<Blob name="blob4" value="Hello world!" />
+		</Block>
+		
+		<!-- sfdsdfd
+		
+		<  Bl   obdfgdgdg dg   dffgdg   namdrgdfge="blob4" value="Hello world!" />
+		
+		sfsfsdsdf -->
+		<Blob name="blob3" value="!" />
+
+    </Block>
+</DataModel>
+
+
+</BufferFuzzer>
+<!-- sfdsdfdsfsfsdsdf -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

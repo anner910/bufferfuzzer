@@ -1,0 +1,35 @@
+<BufferFuzzer name="test_buffer" author="wanghao 6482543@qq_com">
+
+
+<Buffer name="test" >
+
+    <Buf name="mac" valueType="hex" value="01005e000001" />
+    <U32 name="port" value="1000" />
+
+    //只变异非逗号字符串
+    <String name="String_Analyzer" value="taiwan,beijing,shanghai,zhongguo">
+        <Analyzer type="test"/>
+    </String>
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

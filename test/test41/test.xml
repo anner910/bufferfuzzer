@@ -1,0 +1,50 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+<Buffer name="data" >
+    <Number name="Number4" size="32" value="123456"/>
+    <String name="String2" value="ffffffffff"/>
+    <Buf name="Blob2" value="ggggggggggg"/>
+</Buffer>
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="Number1" size="32" value="1"/>
+
+    <Number name="length1" size="32">
+        <Relation type="size" of="Block1"/>
+    </Number>
+
+    <Struct name="Block1" >
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String1" value="ddd"/>
+        <Buf name="Blob1" value="ggg"/>
+    </Struct>
+
+    <Struct name="Block2" ref="data"/>
+    <String name="String22" value="jieshu"/>
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    <Number name="type1" size="32" value="1"/>
+
+    //可以直接指定某一元素的长度
+    <Number name="length1" size="32">
+        <Relation type="size" of="blob1"/>
+    </Number>
+
+    <Buf name="blob1" value="Hello world!" />
+
+    <Number name="type2" size="32" value="2"/>
+
+    //可以直接指定某一结构的长度
+    <Number name="length2" size="32">
+        <Relation type="size" of="Block1"/>
+    </Number>
+
+    <Struct name="Block1" >
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String4" value="ddd"/>
+        <Buf name="Blob4" value="ggg"/>
+    </Struct>
+
+    <Struct name="Block2" >
+        <Number name="type3" size="32" value="3"/>
+
+        //可以直接指定父亲或者直系祖先的长度
+        <Number name="length3" size="32">
+            <Relation type="size" of="Block2"/>
+        </Number>
+        <Buf name="blob5" value="Hello world!" />
+    </Struct>
+
+    <Buf name="blob6" value="!" />
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

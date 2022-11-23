@@ -1,0 +1,59 @@
+<BufferFuzzer name="arp_buffer" author="wanghao 6482543@qq.com">
+
+
+<!-- ARP RFC826 -->
+<!-- 字段名称来自wireshark -->
+<Buffer name="arp_packet" >
+
+    <Struct name="eth" >
+        <Buf name="eth_dst" length="6"/>
+        <Buf name="eth_src" length="6"/>
+        <U16 name="eth_type" />
+    </Struct>
+
+    <Struct name="arp" >
+
+        <U16 name="arp_hw_type" />
+
+        <!-- 1 request 2 reply -->
+        <U16 name="arp_proto_type" />
+
+        <U8 name="arp_hw_size" >
+            <Relation type="size" of="arp_src_hw_mac"/>
+        </U8>
+
+        <U8 name="arp_proto_size" >
+            <Relation type="size" of="arp_src_proto_ipv4"/>
+        </U8>
+
+        <U16 name="arp_opcode" />
+        <Buf name="arp_src_hw_mac" length="6"/>	
+        <Buf name="arp_src_proto_ipv4" length="4"/>
+        <Buf name="arp_dst_hw_mac" length="6"/>
+        <Buf name="arp_dst_proto_ipv4" length="4"/>
+
+    </Struct>
+
+    <Buf />
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

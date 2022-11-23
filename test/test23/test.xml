@@ -1,0 +1,33 @@
+<BufferFuzzer name="temp" >
+
+
+
+<Buffer name="DataModel1" >
+    <Struct name="HelloWorld" >
+        <String name="aaa" value="json=" token="true"/>
+
+        <String name="asdsds" >
+            <Analyzer type="json"/>
+        </String>
+    </Struct>
+</Buffer>
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

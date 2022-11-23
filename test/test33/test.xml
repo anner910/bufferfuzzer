@@ -1,0 +1,88 @@
+<BufferFuzzer name="dhcp_buffer" author="wanghao 6482543@qq_com">
+
+<Defaults>
+    <Number endian="big"/>
+</Defaults>
+
+
+<Buffer name="dhcp_message_type" >
+    <U8 name="type" value="53" token="true"/>
+    <U8 name="dhcp_option_length" >
+        <Relation type="size" of="data"/>
+    </U8>
+    <U8 name="data" />
+</Buffer>
+
+
+<Buffer name="dhcp_server_identifier" >
+    <U8 name="type" value="54" token="true"/>
+    <U8 name="dhcp_option_length" >
+        <Relation type="size" of="data"/>
+    </U8>
+    <Buf name="data" />
+</Buffer>
+
+<!-- dhcp RFC2131 -->
+<!-- 字段名称来自wireshark -->
+<Buffer name="dhcp_packet" >
+    <U8 name="dhcp_type" />
+    <U8 name="dhcp_hw_type" />
+    <U8 name="dhcp_hw_len" >
+        <Relation type="size" of="dhcp_hw_mac_addr"/>
+    </U8>
+
+    <U8 name="dhcp_hops" />
+    <U32 name="dhcp_id" />
+    <U16 name="dhcp_secs" />
+    <U16 name="dhcp_flags" />
+
+    <U32 name="dhcp_ip_client" />
+    <U32 name="dhcp_ip_your" />
+    <U32 name="dhcp_ip_server" />
+    <U32 name="dhcp_ip_relay" />
+
+    <Buf name="dhcp_hw_mac_addr" length="6"/>
+    <Padding alignment="128" of="dhcp_hw_mac_addr"/>
+
+    <Buf name="dhcp_server" length="64"/>
+    <Buf name="dhcp_file" length="128"/>
+    <U32 name="dhcp_cookie" />
+
+    <Array name="Options" Occurs="-1">
+        <Union>
+            <Struct name="DhcpMessageType" ref="dhcp_message_type"/>
+            <Struct name="DhcpServerIdentifier" ref="dhcp_server_identifier"/>
+
+            <Struct name="Option" >
+                <U8 name="type" />
+                <U8 name="dhcp_option_length" >
+                    <Relation type="size" of="data"/>
+                </U8>
+                <Buf name="data" />
+            </Struct >
+
+            <U8 name="End" valueType="hex" value="ff" token="true"/>
+        </Union>
+    </Array>
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="type2" size="32" value="2"/>
+
+    <Bits name="flags" size="32" >
+        <Bit name="flag1" position="0" size="6"/>
+        <Bit name="flag2" position="6" size="8"/>
+        <Bit name="flag3" position="14" size="2"/>
+        <Bit name="flag4" position="16" size="16"  value="1234">
+            <Relation type="size" of="Blob5"/>
+        </Bit>
+    </Bits>
+
+    <Buf name="Blob5" value="!"/>
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

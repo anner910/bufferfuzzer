@@ -1,0 +1,39 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="length3" size="32">
+        <Relation type="count" of="Array1"/>
+    </Number>
+
+    <Array name="Array1" count="5">
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String4" value="ddd"/>
+        <Buf name="Blob4" value="ggg"/>
+    </Array>
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="type2" size="32" value="2"/>
+
+    <Array count="-1">
+        <String name="String4" length="3" value="ccc" token="true" />
+    </Array>
+
+    <Buf name="Blob5" value="!"/>
+		
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

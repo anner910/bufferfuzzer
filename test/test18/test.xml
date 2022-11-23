@@ -1,0 +1,52 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    //Number类型的长度用size表示，为bit数 
+    //value可以不写，默认为0
+    <Number name="Number1" size="32" />
+    <Number name="Number2" size="32" value="1234"/>
+
+    //String类型的长度使用length表示
+    <String name="String1" length="3" value="bbb"/>
+
+    //length长度可以大于value实际长度，使用0填充
+    <String name="String2" length="10" value="ccc"/>
+
+    <String name="String3" length="5" />
+
+    //可以不写长度，长度从value计算出来
+    <String name="String4" value="ddd"/>
+
+    //Buf类型的长度使用length表示
+    <Buf name="Blob1" length="3" value="eee"/>
+
+    //length长度可以大于value实际长度，使用0填充
+    <Buf name="Blob2" length="10" value="fff"/>
+
+    <Buf name="Blob3" length="5" />
+
+    //可以不写长度，长度从value计算出来
+    <Buf name="Blob4" value="ggg"/>
+
+    <S8 name="S8"  />
+    <S16 name="S16" value="0"/>
+    <S32 name="S32" value="0"/>
+    <S64 name="S64" value="1000"/>
+
+    <U8 name="U8" value="10"/>
+    <U16 name="U16" value="10"/>
+    <U32 name="U32" value="10"/>
+    <U64 name="U64" value="10"/>
+
+    <Float name="Float" value="10"/>
+    <Double name="Double" value="10"/>
+
+    <Padding alignment="32" of="Number2"/>
+
+</Buffer>
+
+
+</BufferFuzzer>

@@ -1,0 +1,38 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    <Buf name="Blob1" length="4" value="aaaa"/>
+
+    //value长度不够，用0补齐
+    <Buf name="Blob2" length="10" value="bbbb"/>
+
+    <String name="String1" length="4" value="cccc"/>
+
+    <String name="String2" length="10" value="dddddd"/>
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

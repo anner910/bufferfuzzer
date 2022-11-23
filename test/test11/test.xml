@@ -1,0 +1,34 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer  name="DataModel1" >
+
+    //Number类型的长度用size表示，为bit数 
+    //value可以不写，默认为0
+    <Number name="Number1" size="32" />
+    <Number name="Number2" size="32" value="1234"/>
+    
+</Buffer >
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

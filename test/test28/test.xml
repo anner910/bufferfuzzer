@@ -1,0 +1,44 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    //Number类型的长度用size表示，为bit数 
+    //value可以不写，默认为0
+    <Number name="Number1" size="16" />
+    <Number name="Number2" size="32" value="1234"/>
+
+
+    //Bits一定为定长，8,16,32,64，大小端Bits确定，Bit继承
+    <Bits name="flags" size="32" >
+        <Bit name="flag1" position="0" size="6"/>
+        <Bit name="flag2" position="6" size="8"/>
+        <Bit name="flag3" position="14" size="2"/>
+        <Bit name="flag4" position="16" size="16"  value="1234">
+        </Bit>
+    </Bits>
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

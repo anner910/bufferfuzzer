@@ -1,0 +1,43 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    <Number name="Number1" size="32" value="1"/>
+
+    //一个Struct里边可以放置多个子元素
+    <Struct name="Block1" >
+        <Number name="Number2" size="32" value="1234"/>
+        <String name="String4" value="ddd"/>
+        <Buf name="Blob4" value="ggg"/>
+    </Struct>
+
+    <Struct name="Block2" >
+        <Number name="Number3" size="32" value="123456"/>
+        <String name="String2" value="ffffffffff"/>
+        <Buf name="Blob3" value="ggggggggggg"/>
+    </Struct>
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

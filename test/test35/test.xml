@@ -1,0 +1,79 @@
+
+
+
+<BufferFuzzer name="jpg_buffer" author="wanghao 6482543@qq_com">
+
+<Defaults>
+    <Number endian="big"/>
+</Defaults>
+
+<!-- https://blog.csdn.net/zz460833359/article/details/123921851  
+    https://www.cnblogs.com/reddusty/p/4850403.html-->
+//没写完，对付用吧
+<Buffer name="jpg_packet" >
+    <Buf name="head" valueType="hex" value="FFD8" token="true"/>
+
+    <Array name="Segment" Occurs="-1">
+        <Union>
+            <Struct name="Option" >
+                <Struct name="segment_type" >
+                    <U8 name="logo" valueType="hex" value="ff" token="true"/>
+                    <U8 name="type"/>
+                </Struct >
+
+                <Struct name="segment_content">
+                    <U16 name="length" >
+                        <Relation type="size" of="segment_content"/>
+                    </U16>
+                    <Buf name="content"/>
+                </Struct >
+            </Struct >
+        </Union>
+    </Array>
+
+    <Array name="dataSegment" Occurs="-1">
+        <Union>
+            <Struct name="Option" >
+                <Buf name="data"/>
+                <Struct name="segment_type" >
+                    <U8 valueType="hex" value="ff" token="true"/>
+                    <Union>
+                        <U8 valueType="hex" value="00" token="true"/>
+                        <U8 valueType="hex" value="d0" token="true"/>
+                        <U8 valueType="hex" value="d1" token="true"/>
+                        <U8 valueType="hex" value="d2" token="true"/>
+                        <U8 valueType="hex" value="d3" token="true"/>
+                        <U8 valueType="hex" value="d4" token="true"/>
+                        <U8 valueType="hex" value="d5" token="true"/>
+                        <U8 valueType="hex" value="d6" token="true"/>
+                        <U8 valueType="hex" value="d7" token="true"/>
+                    </Union>
+                </Struct >
+            </Struct >
+        </Union>
+    </Array>
+
+    <Buf name="blob" />
+
+    <Buf name="End" valueType="hex" value="ffd9" token="true" />
+</Buffer>
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

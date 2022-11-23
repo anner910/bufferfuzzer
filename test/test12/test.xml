@@ -1,0 +1,45 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    //value可以不写，默认为0
+
+    <S8 name="S8"  />
+    <S16 name="S16" value="0"/>
+    <S32 name="S32" value="0"/>
+    <S64 name="S64" value="1000"/>
+
+    <U8 name="U8" value="10"/>
+    <U16 name="U16" value="10"/>
+    <U32 name="U32" value="10"/>
+    <U64 name="U64" value="10"/>
+
+    //float为4byte,Double为8byte
+    <Float name="Float" value="10"/>
+    <Double name="Double" value="10"/>
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

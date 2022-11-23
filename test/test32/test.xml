@@ -1,0 +1,95 @@
+<BufferFuzzer name="icmp_buffer" author="wanghao 6482543@qq_com">
+
+<Defaults>
+    <Number endian="big"/>
+</Defaults>
+
+
+<!-- ipv4 RFC791 -->
+<!-- 字段名称来自wireshark -->
+<Buffer name="icmp_packet" >
+
+    <Struct name="eth" >
+        <Buf name="eth_dst" length="6"/>
+        <Buf name="eth_src" length="6"/>
+        <U16 name="eth_type" />
+    </Struct>
+
+    <Struct name="ip" >
+        <Struct name="Head" >
+            <Bits size="16">
+                <Bit name="ip_version" position="0" size="4"/>
+                <Bit name="ip_hdr_len" position="4" size="4">
+                    <Relation type="sizeIpv4" of="Head"/>
+                </Bit>
+                <Bit name="ip_dsfield_dscp" position="8" size="6"/>
+                <Bit name="ip_dsfield_ecn" position="14" size="2"/>
+            </Bits>
+
+            <U16 name="ip_len" >
+                <Relation type="size" of="ip"/>
+            </U16>
+
+            <U16 name="ip_id" />
+
+            <Bits name="ip_flags" size="16">
+                <Bit name="ip_flags_rb" position="0" size="1"/>
+                <Bit name="ip_flags_df" position="1" size="1"/>
+                <Bit name="ip_flags_mf" position="2" size="1"/>
+                <Bit name="ip_frag_offset" position="3" size="13"/>
+            </Bits>
+
+            <U8 name="ip_ttl" />
+
+            <U8 name="ip_proto" />
+
+            <U16 name="ip_checksum" >
+                <Fixup type="icmpChecksum">
+                    <Param name="ref" value="Head"/>
+                </Fixup>
+            </U16>
+
+            <U32 name="ip_src" />
+            <U32 name="ip_dst" />
+
+            <Struct name="ip_Options">
+                <Padding alignment="32" of="Head"/>
+            </Struct>
+        </Struct>
+
+        <Struct name="icmp" >
+            <U8 name="icmp_type" />
+            <U8 name="icmp_code" />
+            <U16 name="icmp_checksum" >
+                <Fixup type="icmpChecksum">
+                    <Param name="ref" value="icmp"/>
+                </Fixup>
+            </U16>
+            <U16 name="icmp_ident" />
+            <U16 name="icmp_seq" />
+            <Buf  name="data"/>
+        </Struct>
+
+    </Struct>
+
+</Buffer>
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

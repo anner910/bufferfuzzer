@@ -1,0 +1,78 @@
+<BufferFuzzer name="jpg_buffer" author="wanghao 6482543@qq_com">
+
+<Defaults>
+    <Number endian="big"/>
+</Defaults>
+
+<!-- https://blog.csdn.net/zranxi/article/details/122829323 -->
+<Buffer name="box" >
+    <Union name="union">
+        <Struct name="headL">
+            <U32 name="type1" value="1" token="true"/>
+            <U32 name="type2" />
+
+            <U64 name="length" >
+                <Relation type="size" of="headL"/>
+            </U64>
+
+            <Buf name="data"/>
+        </Struct>
+
+        <Struct name="headN">
+            <U32 name="length1" >
+                <Relation type="size" of="headN"/>
+            </U32>
+            <U32 name="type3" />
+            <Buf name="data"/>
+        </Struct>
+    </Union>
+</Buffer>
+
+//还有其他域，以后再说吧
+<Buffer name="ftyp" ref="box">
+    <U32 name="union.headL.type2" valueType="hex" value="66747970" token="true"/>
+    <U32 name="union.headN.type3" valueType="hex" value="66747970" token="true"/>
+
+    <Struct name="union.headL.data">
+        <String name="brand" length="4" />
+        <U32 name="Version" />
+        <String name="brands"/>
+    </Struct>
+
+    <Struct name="union.headN.data">
+        <String name="brand" length="4" />
+        <U32 name="Version" />
+        <String name="brands"/>
+    </Struct>
+</Buffer>
+
+
+<Buffer name="mp4_packet" >
+    <Array name="box" minOccurs="-1">
+        <Union >
+            <Struct name="Ftyp" ref="ftyp"/>
+            <Struct name="Box" ref="box"/>
+        </Union>
+    </Array>
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

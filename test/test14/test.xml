@@ -1,0 +1,40 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+	
+    //Buf类型的长度使用length表示
+    <Buf name="Blob1" length="3" value="eee"/>
+
+    //length长度可以大于value实际长度，使用0填充
+    <Buf name="Blob2" length="10" value="fff"/>
+
+    <Buf name="Blob3" length="5" />
+
+    //可以不写长度，长度从value计算出来
+    <Buf name="Blob4" value="ggg"/>
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+POST /mmtls/0000147f HTTP/1.1
+Accept: */*
+Cache-Control: no-cache
+Connection: close
+Content-Length: 10
+Content-Type: application/octet-stream
+Host: 182.50.15.148
+Upgrade: mmtls
+User-Agent: MicroMessenger Client
+X-Online-Host: 182.50.15.148
+
+1234567890

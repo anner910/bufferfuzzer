@@ -1,0 +1,107 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+<Buffer name="Buffer1" >
+    <U32 value="8"/>
+    <S32 name="r30"  >
+        <Relation type="size" of="Buffer1"/>
+    </S32>
+    <Buf name="d20" value="87654321"/>
+
+</Buffer>
+
+//数据模型
+<Buffer name="DataModel1" >
+
+    <Number name="type1" size="8" value="8"/>
+    <Number name="type2" size="16" value="8"/>
+    <Number name="type3" size="32" value="8"/>
+    <Number name="type4" size="64" value="8"/>
+    <String name="String1"  value="w" />
+    
+    <U8 name="U1"  value="8"/>
+    <U16 name="U2"  value="8"/>
+    <U32 name="U3"  value="8"/>
+    <U64 name="U4"  value="8"/>
+    <String name="String2"  value="w" />
+    
+    <S8 name="S1"  value="8"/>
+    <S16 name="S2"  value="8"/>
+    <S32 name="S3"  value="8"/>
+    <S64 name="S4"  value="8"/>
+    <String name="String3"  value="w" />
+    
+    <String name="Ss1"  value="shanghai" />
+    <String name="Ss2"  value="china" length="8"/>
+    
+    <Buf name="B1"  value="shanghai" />
+    <Buf name="B2"  value="china" length="8"/>
+    
+	//valueType hex
+    <Number name="h1" size="32" valueType="hex" value="0x1234"/>
+    <U32    name="h2"  valueType="hex" value="0x1234"/>
+    
+    <Buf name="h3"  valueType="hex" value="1234567887654321"/>
+    
+	//Relation size
+    <S32 name="r1"  >
+        <Relation type="size" of="Struct"/>
+    </S32>
+    
+    <Struct name="Struct">
+        <S32 name="r2"  >
+            <Relation type="size" of="d1"/>
+        </S32>
+        <Buf name="d1" value="12345678"/>
+    </Struct>
+    
+    
+    <Struct name="Struct1">
+        <U32 value="8"/>
+        <S32 name="r3"  >
+            <Relation type="size" of="Struct1"/>
+        </S32>
+        <Buf name="d2" value="87654321"/>
+    </Struct>
+
+    //Relation count
+    <S32 name="rc1"  >
+        <Relation type="count" of="Array1"/>
+    </S32>
+
+
+    <Array name="Array1" occurs="3">
+        <String name="Ss10"  value="wang" length="4"/>
+    </Array>
+
+    //Padding
+    <String name="Ss20"  value="china" />
+    <Padding name="p1" alignment="128" of="Ss20"/>
+
+    //ref
+    <Struct name="Buffer" ref="Buffer1"/>
+    
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

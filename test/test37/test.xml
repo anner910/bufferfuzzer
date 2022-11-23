@@ -1,0 +1,35 @@
+<BufferFuzzer name="test_buffer" author="wanghao 6482543@qq_com">
+
+<Defaults>
+    <Number endian="big"/>
+</Defaults>
+
+
+<Buffer name="test" >
+
+    <U32 name="port1" value="1234" />
+    <U32 name="port2" value="1234" endian="little"/>
+	
+	
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

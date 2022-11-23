@@ -1,0 +1,36 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//数据模型
+<Buffer name="DataModel1" >
+	
+    <Number name="Number3" size="32" valueType="hex" value="1234"/>
+
+    //valueType hex string(默认) ipv4 valueType必须放在value前边
+    <Buf name="Blob1" valueType="hex" value="00 ff ee 12 34 66 fd"/>
+
+    <Buf name="Blob2" valueType="ipv4" value="192.168.0.1"/>
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

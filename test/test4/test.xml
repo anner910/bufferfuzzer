@@ -1,0 +1,50 @@
+<BufferFuzzer name="BufferFuzzer1" >
+
+
+//ģ
+<Buffer name="DataModel1" >
+
+    <Number name="type2" size="32" value="2"/>
+
+    <Union name="Block1" >
+        <Struct>
+            <String name="String4" length="3" value="ccc" token="true"/>
+            <String name="String44" length="3" value="ddd" token="true"/>
+        </Struct>
+
+        <Struct>
+            <String name="String6" length="3" value="ccc" token="true"/>
+            <String name="String66" length="3" value="DDD" token="true"/>
+            <String name="String66" length="3" value="ddd" token="true"/>
+        </Struct>
+
+
+        <String name="String5" length="3" value="ccc" token="true"/>
+        <String name="String6" length="3" value="eee" token="true"/>
+    </Union>
+
+    <Buf name="Blob5" value="!"/>
+
+</Buffer>
+
+
+</BufferFuzzer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
